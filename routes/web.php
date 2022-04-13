@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\WisataController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WisataController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +16,35 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/wisata', [WisataController::class,'index'])->name('wisata');
-Route::get('/tambahwisata', [WisataController::class,'tambahwisata']);
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/signup', function () {
+    return view('signup');
+});
+
+Route::get('/admin-wisata', [WisataController::class,'index'])->name('wisata');
+Route::get('/admin-tambahwisata', [WisataController::class,'tambahwisata']);
 
 Route::post('/insertwisata', [WisataController::class,'insertwisata']);
 
 Route::get('/showwisata/{id}', [WisataController::class,'showwisata']);
 Route::post('/updatewisata/{id}', [WisataController::class,'updatewisata']);
 Route::get('/deletewisata/{id}', [WisataController::class,'deletewisata']);
+
+//customer
+Route::get('/admin-customer', [CustomerController::class,'index'])->name('customer');
+
+Route::get('/admin-tambahcustomer', [CustomerController::class,'tambahcustomer']);
+
+Route::post('/insertcustomer', [CustomerController::class,'insertcustomer']);
+
+Route::get('/showcustomer/{id}', [CustomerController::class,'showcustomer']);
+Route::post('/updatecustomer/{id}', [CustomerController::class,'updatecustomer']);
+Route::get('/deletecustomer/{id}', [CustomerController::class,'deletecustomer']);
+
+
