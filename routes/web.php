@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WisataController;
 use App\Http\Controllers\CustomerController;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignupController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,4 +48,5 @@ Route::get('/showcustomer/{id}', [CustomerController::class,'showcustomer']);
 Route::post('/updatecustomer/{id}', [CustomerController::class,'updatecustomer']);
 Route::get('/deletecustomer/{id}', [CustomerController::class,'deletecustomer']);
 
-
+Route::post('/signup', [SignupController::class, 'store']);
+Route::post('/login', [LoginController::class, 'authenticate']);
