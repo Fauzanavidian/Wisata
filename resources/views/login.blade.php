@@ -9,8 +9,7 @@
     <div class="container">
         <div class="row">
           <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="card border-0 shadow rounded-3 my-5">
-<!-- alert -->
+              <!-- alert -->
             @if(session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
@@ -25,8 +24,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
              </div>
             @endif
-
-
+            <div class="card border-0 shadow rounded-3 my-5">
               <div class="card-body p-4 p-sm-5">
                 <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
                 <form action="/login" method="post">

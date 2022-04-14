@@ -10,7 +10,7 @@ class CustomerController extends Controller
     public function index(Request $request){
 
         if($request->has('search')){
-            $data = Customer::where('nama','LIKE','%' .$request->search.'%')->paginate(5);
+            $data = Customer::where('full_name','LIKE','%' .$request->search.'%')->paginate(5);
         }else{
             $data = Customer::paginate(5);
             // $data = customer::all();

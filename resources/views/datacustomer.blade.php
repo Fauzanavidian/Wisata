@@ -15,11 +15,12 @@
                 </div>
               </div>
         <div class="row">
-             @if ($message = Session::get('success'))
-            <div class="alert alert-success mt-2" role="alert">
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-dismissible fade show mt-1" role="alert">
                 {{ $message }}
-            </div>
-            @endif 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                 </div>
+            @endif
             <table class="table">
                 <thead>
                     <tr>

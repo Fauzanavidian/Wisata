@@ -30,7 +30,7 @@
                 </p>
                 <div class="text-center text-md-start"> <a
                         class="btn btn-info btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow"
-                        href="#!" role="button">Find out more</a>
+                        href="/login" role="button">Find out more</a>
                     <div class="w-100 d-block d-md-none"></div><a href="#!"
                         role="button" data-bs-toggle="modal"
                         data-bs-target="#popupVideo"><span
