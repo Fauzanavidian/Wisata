@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WisataController;
 use App\Http\Controllers\CustomerController;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignupController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,31 +20,38 @@ Route::get('/', function () {
     return view('home');
 });
 
+// auth
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
+
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/signup', function () {
     return view('signup');
 });
+Route::post('/signup', [SignupController::class, 'store']);
 
-Route::get('/admin-wisata', [WisataController::class,'index'])->name('wisata');
-Route::get('/admin-tambahwisata', [WisataController::class,'tambahwisata']);
+
+
+Route::get('/admin-wisata', [WisataController::class,'index'])->name('wisata')->middleware('auth');
+Route::get('/admin-tambahwisata', [WisataController::class,'tambahwisata'])->middleware('auth');
 
 Route::post('/insertwisata', [WisataController::class,'insertwisata']);
 
-Route::get('/showwisata/{id}', [WisataController::class,'showwisata']);
+Route::get('/showwisata/{id}', [WisataController::class,'showwisata'])->middleware('auth');
 Route::post('/updatewisata/{id}', [WisataController::class,'updatewisata']);
 Route::get('/deletewisata/{id}', [WisataController::class,'deletewisata']);
 
 //customer
-Route::get('/admin-customer', [CustomerController::class,'index'])->name('customer');
+Route::get('/admin-customer', [CustomerController::class,'index'])->name('customer')->middleware('auth');
 
-Route::get('/admin-tambahcustomer', [CustomerController::class,'tambahcustomer']);
+Route::get('/admin-tambahcustomer', [CustomerController::class,'tambahcustomer'])->middleware('auth');
 
 Route::post('/insertcustomer', [CustomerController::class,'insertcustomer']);
 
-Route::get('/showcustomer/{id}', [CustomerController::class,'showcustomer']);
+Route::get('/showcustomer/{id}', [CustomerController::class,'showcustomer'])->middleware('auth');
 Route::post('/updatecustomer/{id}', [CustomerController::class,'updatecustomer']);
 Route::get('/deletecustomer/{id}', [CustomerController::class,'deletecustomer']);
 

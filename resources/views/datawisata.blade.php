@@ -15,11 +15,11 @@
                 </div>
               </div>
         <div class="row">
-            {{-- @if ($message = Session::get('success'))
+             @if ($message = Session::get('success'))
             <div class="alert alert-success mt-2" role="alert">
                 {{ $message }}
             </div>
-            @endif --}}
+            @endif 
             <table class="table">
                 <thead>
                     <tr>
