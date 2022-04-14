@@ -55,4 +55,5 @@ Route::get('/showcustomer/{id}', [CustomerController::class,'showcustomer'])->mi
 Route::post('/updatecustomer/{id}', [CustomerController::class,'updatecustomer']);
 Route::get('/deletecustomer/{id}', [CustomerController::class,'deletecustomer']);
 
-
+Route::post('/signup', [SignupController::class, 'store']);
+Route::post('/login', [LoginController::class, 'authenticate']);
