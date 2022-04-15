@@ -22,6 +22,10 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->integer('phone');
+            $table->string('motto');
+            $table->integer('usia');
+            $table->enum('status',['Single','Menikah']);
+            $table->string('kode');
         });
     }
 

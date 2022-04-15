@@ -15,8 +15,7 @@
                                 <label for="exampleInputEmail1"
                                     class="form-label">Nama Wisata</label>
                                 <input type="text" name="nama" class="form-control"
-                                    id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" value="{{ $data->nama }}">
+                                     value="{{ $data->nama }}">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1"

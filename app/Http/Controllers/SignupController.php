@@ -21,7 +21,11 @@ class SignupController extends Controller
        'name' => 'required|max:225',
        'email' => 'required|email|unique:customers',
        'password' => 'required|min:5|max:225',
-       'phone' => 'required'
+       'phone' => 'required',
+       'usia' => 'required',
+       'motto' => 'required',
+       'status' => 'required',
+       'kode' => 'required',
         ]);
 
         // $validatedDate['password'] = bcrypt($validatedDate['password']);

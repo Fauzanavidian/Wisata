@@ -24,6 +24,15 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
              </div>
             @endif
+
+  <!-- alert delete berhasil -->
+          @if(session()->has('delete_s'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('delete_s') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             </div>
+            @endif
+            
             <div class="card border-0 shadow rounded-3 my-5">
               <div class="card-body p-4 p-sm-5">
                 <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>

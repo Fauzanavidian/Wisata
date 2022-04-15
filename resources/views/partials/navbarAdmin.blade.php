@@ -18,7 +18,7 @@
                         aria-current="page" href="/admin-customer">Data
                         Customer</a></li>
                 <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium"
-                        aria-current="page">Hallo,{{auth()->user()->name}}</a>
+                        aria-current="page" href="/dataAdmin">Hallo,{{auth()->user()->name}}</a>
                 </li>
 
                 <li class="nav-item px-3 px-xl-4">

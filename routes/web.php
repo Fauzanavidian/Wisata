@@ -5,6 +5,7 @@ use App\Http\Controllers\WisataController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignupController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,5 +59,13 @@ Route::get('/editcustomer',[CustomerController::class,'editcustomer'])->middlewa
 Route::post('/updatecustomer/{id}', [CustomerController::class,'updatecustomer']);
 Route::get('/deletecustomer/{id}', [CustomerController::class,'deletecustomer']);
 
-Route::post('/signup', [SignupController::class, 'store']);
-Route::post('/login', [LoginController::class, 'authenticate']);
+// Route::post('/signup', [SignupController::class, 'store']);
+// Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/dataAdmin', function () {
+    return view('dataAdmin');
+})->middleware('auth');
+
+Route::get('/editAdmin', [AdminController::class,'editinfo'])->middleware('auth');
+
+Route::post('/updateAdmin', [AdminController::class,'updateinfo']);
+Route::delete('/deleteAdmin', [AdminController::class,'deleteinfo']);
