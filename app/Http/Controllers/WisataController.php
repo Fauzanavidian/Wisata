@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Wisata;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class WisataController extends Controller
 {
@@ -43,17 +44,28 @@ class WisataController extends Controller
         return redirect()->route('wisata')->with('success',' Data Berhasil Di Tambahkan ke List Wisata');
     }
 
-    public function showwisata($id){
-
-        $data = Wisata::find($id);
-        // dd($data);
+    public function editwisata(){
+        $data = Session::get('datawisata');
         return view('editwisata',compact('data'));
+    }
+
+    public function showwisata($id){
+        $data = Wisata::find($id);
+        Session::put('datawisata',$data);
+        // dd($data);
+        return redirect()->action([WisataController::class, 'editwisata']);
     }
 
     public function updatewisata(Request $request, $id){
 
         $data = Wisata::find($id);
-        $data->update($request->all());
+
+        if($request->hasFile('foto')){
+            $request->file('foto')->move(public_path('fotowisata/'),$request->file('foto')->getClientOriginalName());
+            $data-> foto = 'fotowisata/'. $request->file('foto')->getClientOriginalName();
+            $data->save();
+            $data->update($request->all());
+    }
         return redirect()->route('wisata')->with('success',' Data Berhasil Di Update ke List Wisata');
     }
 

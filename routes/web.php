@@ -33,14 +33,15 @@ Route::get('/signup', function () {
 });
 Route::post('/signup', [SignupController::class, 'store']);
 
-
-
+//wisata
 Route::get('/admin-wisata', [WisataController::class,'index'])->name('wisata')->middleware('auth');
 Route::get('/admin-tambahwisata', [WisataController::class,'tambahwisata'])->middleware('auth');
 
 Route::post('/insertwisata', [WisataController::class,'insertwisata']);
 
 Route::get('/showwisata/{id}', [WisataController::class,'showwisata'])->middleware('auth');
+Route::get('/editwisata',[WisataController::class,'editwisata'])->middleware('auth');
+
 Route::post('/updatewisata/{id}', [WisataController::class,'updatewisata']);
 Route::get('/deletewisata/{id}', [WisataController::class,'deletewisata']);
 
@@ -52,6 +53,8 @@ Route::get('/admin-tambahcustomer', [CustomerController::class,'tambahcustomer']
 Route::post('/insertcustomer', [CustomerController::class,'insertcustomer']);
 
 Route::get('/showcustomer/{id}', [CustomerController::class,'showcustomer'])->middleware('auth');
+Route::get('/editcustomer',[CustomerController::class,'editcustomer'])->middleware('auth');
+
 Route::post('/updatecustomer/{id}', [CustomerController::class,'updatecustomer']);
 Route::get('/deletecustomer/{id}', [CustomerController::class,'deletecustomer']);
 

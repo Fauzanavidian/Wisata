@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CustomerController extends Controller
 {
@@ -37,11 +38,16 @@ class CustomerController extends Controller
         return redirect()->route('customer')->with('success',' Data Berhasil Di Tambahkan ke List customer');
     }
 
-    public function showcustomer($id){
-
-        $data = Customer::find($id);
-        // dd($data);
+    public function editcustomer(){
+        $data = Session::get('datacustomer');
         return view('editcustomer',compact('data'));
+    }
+
+    public function showcustomer($id){
+        $data = Customer::find($id);
+        Session::put('datacustomer',$data);
+        // dd($data);
+        return redirect()->action([CustomerController::class, 'editcustomer']);
     }
 
     public function updatecustomer(Request $request, $id){
