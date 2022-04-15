@@ -52,6 +52,13 @@ class CustomerController extends Controller
 
     public function updatecustomer(Request $request, $id){
 
+        $request->validate([
+            'full_name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'password' => 'required',
+        ]);
+
         $data = Customer::find($id);
         $data->update($request->all());
         return redirect()->route('customer')->with('success',' Data Berhasil Di Update ke List customer');
