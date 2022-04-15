@@ -63,11 +63,9 @@ class WisataController extends Controller
             'lokasi' => 'required',
             'deskripsi' => 'required',
             'rating' => 'required',
-            'foto' => 'required',
         ]);
 
         $data = Wisata::find($id);
-
         if($request->hasFile('foto')){
             $request->file('foto')->move('fotowisata/',$request->file('foto')->getClientOriginalName());
             $data-> foto = 'fotowisata/'. $request->file('foto')->getClientOriginalName();
