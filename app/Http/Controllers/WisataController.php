@@ -61,11 +61,11 @@ class WisataController extends Controller
         $data = Wisata::find($id);
 
         if($request->hasFile('foto')){
-            $request->file('foto')->move(public_path('fotowisata/'),$request->file('foto')->getClientOriginalName());
+            $request->file('foto')->move('fotowisata/',$request->file('foto')->getClientOriginalName());
             $data-> foto = 'fotowisata/'. $request->file('foto')->getClientOriginalName();
-            $data->save();
-            $data->update($request->all());
-    }
+        }
+        $data->save();
+        $data->update($request->all());
         return redirect()->route('wisata')->with('success',' Data Berhasil Di Update ke List Wisata');
     }
 
