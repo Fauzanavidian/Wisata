@@ -5,6 +5,7 @@ use App\Http\Controllers\WisataController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignupController;
+use App\Http\Controllers\TransactionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,3 +51,7 @@ Route::get('/deletecustomer/{id}', [CustomerController::class,'deletecustomer'])
 
 Route::post('/signup', [SignupController::class, 'store']);
 Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::get('/admin-datatransaksi', function () {
+    return view('datatransaksi');
+});
