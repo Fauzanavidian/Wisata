@@ -6,6 +6,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TransactionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -69,3 +70,9 @@ Route::get('/editAdmin', [AdminController::class,'editinfo'])->middleware('auth'
 
 Route::post('/updateAdmin', [AdminController::class,'updateinfo']);
 Route::delete('/deleteAdmin', [AdminController::class,'deleteinfo']);
+
+// Route::get('/admin-datatransaksi', function () {
+//     return view('datatransaksi');
+// });
+
+Route::get('/admin-datatransaksi', [TransactionController::class,'index'])->middleware('auth');

@@ -16,7 +16,11 @@
                 </li>
                 <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium"
                         aria-current="page" href="/admin-customer">Data
-                        Customer</a></li>
+                        Customer</a>
+                </li>
+                <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium"
+                        aria-current="page" href="/admin-datatransaksi">Data Transaksi</a>
+                </li>
                 <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium"
                         aria-current="page" href="/dataAdmin">Hallo,{{auth()->user()->name}}</a>
                 </li>

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('wisatas', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama')->unique();
             $table->string('foto');
             $table->string('lokasi');
             $table->text('deskripsi');

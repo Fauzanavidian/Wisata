@@ -17,7 +17,7 @@ class WisataSeeder extends Seeder
     public function run()
     {
         DB::table('wisatas')->insert([
-            'nama' => 'KUTA BITCH',
+            'nama' => 'KUTA BEACH',
             'foto' => 'balipackage.jpg',
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
@@ -27,7 +27,7 @@ class WisataSeeder extends Seeder
         ],
         );
         DB::table('wisatas')->insert([
-            'nama' => 'KUTA BITCH',
+            'nama' => 'KUTA BEACH2',
             'foto' => 'balipackage.jpg',
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
@@ -37,7 +37,7 @@ class WisataSeeder extends Seeder
         ],
         );
         DB::table('wisatas')->insert([
-            'nama' => 'KUTA BITCH',
+            'nama' => 'KUTA BEACH3',
             'foto' => 'balipackage.jpg',
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
@@ -47,7 +47,7 @@ class WisataSeeder extends Seeder
         ],
         );
         DB::table('wisatas')->insert([
-            'nama' => 'KUTA BITCH',
+            'nama' => 'KUTA BEACH4',
             'foto' => 'balipackage.jpg',
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
@@ -57,7 +57,7 @@ class WisataSeeder extends Seeder
         ],
         );
         DB::table('wisatas')->insert([
-            'nama' => 'KUTA BITCH',
+            'nama' => 'KUTA BEACH5',
             'foto' => 'balipackage.jpg',
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
@@ -67,7 +67,7 @@ class WisataSeeder extends Seeder
         ],
         );
         DB::table('wisatas')->insert([
-            'nama' => 'KUTA BITCH',
+            'nama' => 'KUTA BEACH6',
             'foto' => 'balipackage.jpg',
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
@@ -77,7 +77,7 @@ class WisataSeeder extends Seeder
         ],
         );
         DB::table('wisatas')->insert([
-            'nama' => 'KUTA BITCH',
+            'nama' => 'KUTA BEACH7',
             'foto' => 'balipackage.jpg',
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
@@ -87,7 +87,7 @@ class WisataSeeder extends Seeder
         ],
         );
         DB::table('wisatas')->insert([
-            'nama' => 'KUTA BITCH',
+            'nama' => 'KUTA BEACH8',
             'foto' => 'balipackage.jpg',
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
