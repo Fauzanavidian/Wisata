@@ -24,8 +24,9 @@ return new class extends Migration
             $table->bigInteger('phone');
             $table->string('motto');
             $table->integer('usia');
-            $table->enum('status',['Single','Menikah']);
-            $table->string('kode');
+            $table->enum('status',['Sudah Menikah','Belum Menikah']);
+            $table->enum('JK',['Pria','Wanita']);
+            $table->string('foto');
         });
     }
 

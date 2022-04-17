@@ -3,6 +3,13 @@
 @section('container')
 
 <section>
+<div class="text-center">
+        <!-- <label for="exampleInputEmail1"
+                    class="form-label">Email </label>
+            <br> -->
+            <img src="{{ asset('fotoadmin/'. Auth()->User()->foto) }}"
+                                alt="" style="width: 8em;">
+</div>
 <h1 class="text-center">{{Auth()->User()->name}}</h1>
     <div class="container">
         <div class="row justify-content-center">
@@ -18,6 +25,12 @@
                     <div class="card-body">
                         <form action="">
                             @csrf
+                            <div class="mb-3">
+                                <!-- <label for="exampleInputEmail1"
+                                    class="form-label">Email </label>
+                                <br> -->
+                                <!-- <label>{{ Auth()->User()->foto }}</label> -->
+                            </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1"
                                     class="form-label">Email </label>
@@ -42,34 +55,24 @@
                                     <br>
                                 <label>{{ Auth()->User()->usia }}</label>
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="exampleInputEmail1"
                                     class="form-label">Kode Admin</label>
                                 <br>
                                 <label>{{ Auth()->User()->kode }}</label>
-                            </div>
+                            </div> -->
                             <div class="mb-3">
                                 <label for="exampleInputEmail1"
                                     class="form-label">Status</label>
                                 <br>
                                 <label>{{ Auth()->User()->status }}</label>
-                                <!-- <select class="form-select" name="rating"
-                                    aria-label="Default select example">
-                                    <option selected>Single/Menikah/Janda/Duda
-                                    </option>
-                                    <option value="1">Single</option>
-                                    <option value="2">Menikah</option>
-                                    <option value="3">Janda</option>
-                                    <option value="4">Duda</option>
-                                </select> -->
                             </div>
-                            <!-- <div class="mb-3">
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1"
-                                    class="form-label">Masukan Foto</label>
-                                <input type="file" name="foto" class="form-control">
+                                    class="form-label">Jenis Kelamin</label>
+                                <br>
+                                <label>{{ Auth()->User()->JK }}</label>
                             </div>
-                            <button type="submit"
-                                class="btn btn-primary">Submit</button> -->
                             <a href="/editAdmin" type="button" class="btn btn-success">Edit
                              Info</a>
                         </form>

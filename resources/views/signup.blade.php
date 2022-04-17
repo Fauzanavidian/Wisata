@@ -12,7 +12,7 @@
             <div class="card border-0 shadow rounded-3 my-5">
               <div class="card-body p-4 p-sm-5">
                 <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
-                <form action="/signup" method="post">
+                <form action="/signup" method="post" enctype="multipart/form-data">
                   @csrf
                     <div class="form-floating mb-3">
                         <input type="name" name="name" class="form-control" id="fullName" >
@@ -38,18 +38,32 @@
                     <input type="motto" name="motto" class="form-control" id="motto" >
                     <label for="floatingInput">Motto Hidup</label>
                   </div>
-                  <div class="form-floating mb-3">
+                  <!-- <div class="form-floating mb-3">
                     <input type="kode" name="kode" class="form-control" id="kode" >
                     <label for="floatingInput">Kode Admin</label>
-                  </div>
+                  </div> -->
                   <div class="form-floating mb-3">
                     <select class="form-select" id="floatingSelectGrid" name="status" aria-label="Floating label select example">
                       <option selected></option>
-                      <option value="Single">Single</option>
-                      <option value="Menikah">Menikah</option>
+                      <option value="Belum Menikah">Belum Menikah</option>
+                      <option value="Sudah Menikah">Sudah Menikah</option>
                     </select>
                     <label for="floatingSelectGrid">Status</label>
                   </div>
+                  <div class="form-floating mb-3">
+                    <select class="form-select" id="floatingSelectGrid" name="JK" aria-label="Floating label select example">
+                      <option selected></option>
+                      <option value="Pria">Pria</option>
+                      <option value="Wanita">Wanita</option>
+                    </select>
+                    <label for="floatingSelectGrid">Jenis Kelamin</label>
+                  </div>
+                  </div>
+                      <div class="mb-3">
+                            <label for="exampleInputEmail1"
+                                  class="form-label">Masukan Foto</label>
+                              <input type="file" name="foto" class="form-control">
+                        </div>
 
                   <div class="d-grid">
                     <button class="btn btn-info btn-login text-uppercase fw-bold" type="submit">Register</button>

@@ -10,7 +10,7 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-body">
-                        <form action="/updateAdmin" method="post">
+                        <form action="/updateAdmin" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputEmail1"
@@ -40,13 +40,13 @@
                                     
                                     aria-describedby="emailHelp" value="{{ Auth()->User()->usia  }}">
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="exampleInputEmail1"
                                     class="form-label">kode Admin</label>
                                 <input type="text" name="kode" class="form-control"
                                     
                                      value="{{ Auth()->User()->kode  }}">
-                            </div>
+                            </div> -->
                             <div class="mb-3">
                                 <label for="exampleInputEmail1"
                                     class="form-label">Status</label>
@@ -54,10 +54,26 @@
                                     aria-label="Default select example">
                                     <option selected>{{ Auth()->User()->status}}
                                     </option>
-                                    <option value="Single">Single</option>
-                                    <option value="Menikah">Menikah</option>
+                                    <option value="Sudah Menikah">Sudah Menikah</option>
+                                    <option value="Belum Menikah">Belum Menikah</option>
                                 </select>
                             </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1"
+                                    class="form-label">Jenis Kelamin</label>
+                                <select class="form-select" name="JK"
+                                    aria-label="Default select example">
+                                    <option selected>{{ Auth()->User()->JK}}
+                                    </option>
+                                    <option value="Pria">Pria</option>
+                                    <option value="Wanita">Wanita</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                            <label for="exampleInputEmail1"
+                                  class="form-label">Masukan Foto</label>
+                              <input type="file" name="foto" class="form-control">
+                        </div>
                             <button type="submit"
                                 class="btn btn-primary">Submit</button>
                         </form>

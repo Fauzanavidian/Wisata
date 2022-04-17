@@ -30,8 +30,18 @@ class AdminController extends Controller
         // User::save($validatedDate);
         // User::update($validatedDate);
         // \Log::info(Auth::id());
+        // $request->user()->update(
+        //     $request->all()
+        
+        // );
+        $data = User::find(auth()->user()->id);
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('fotoadmin/',$request->file('foto')->getClientOriginalName());
+            $data-> foto = 'fotoadmin/'. $request->file('foto')->getClientOriginalName();
+        }
         $request->user()->update(
             $request->all()
+        
         );
         return redirect('/dataAdmin')->with('berhasil','Edit Succes!!!');
     }

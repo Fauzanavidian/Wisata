@@ -19,19 +19,26 @@ class SignupController extends Controller
     {
     $validatedDate = $request->validate([
        'name' => 'required|max:225',
-       'email' => 'required|email|unique:customers',
+       'email' => 'required|email',
        'password' => 'required|min:5|max:225',
        'phone' => 'required',
        'usia' => 'required',
        'motto' => 'required',
        'status' => 'required',
-       'kode' => 'required',
+       'JK' => 'required',
+       'foto' => 'required',
         ]);
 
         // $validatedDate['password'] = bcrypt($validatedDate['password']);
         $validatedDate['password'] = Hash::make($validatedDate['password']);
 
-        User::create($validatedDate);
+        // User::create($validatedDate);
+        $data =  User::create($validatedDate);
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('fotoadmin/',$request->file('foto')->getClientOriginalName());
+            $data-> foto = $request->file('foto')->getClientOriginalName();
+            $data->save();
+        }
 
         $request->session()->flash('success', 'Signup successful!, Please Login!!! ');
 

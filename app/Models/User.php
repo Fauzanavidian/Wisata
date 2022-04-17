@@ -25,7 +25,8 @@ class User extends Authenticatable
         'motto',
         'usia',
         'status',
-        'kode',
+        'JK',
+        'foto',
     ];
 
     /**
