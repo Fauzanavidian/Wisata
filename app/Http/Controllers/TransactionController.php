@@ -12,7 +12,7 @@ class TransactionController extends Controller
     public function index(Request $request){
 
         if($request->has('search')){
-            $data = Transaksi::where('nama_wisata','LIKE','%' .$request->search.'%')->paginate(5);
+            $data = Transaksi::where('email_customer','LIKE','%' .$request->search.'%')->paginate(5);
         }else{
             $data = Transaksi::paginate(5);
             // $data = Wisata::all();

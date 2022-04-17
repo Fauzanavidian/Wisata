@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->integer('phone');
+            $table->bigInteger('phone');
             $table->string('motto');
             $table->integer('usia');
             $table->enum('status',['Single','Menikah']);

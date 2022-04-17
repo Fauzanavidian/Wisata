@@ -45,7 +45,7 @@ Route::get('/showwisata/{id}', [WisataController::class,'showwisata'])->middlewa
 Route::get('/editwisata',[WisataController::class,'editwisata'])->middleware('auth');
 
 Route::post('/updatewisata/{id}', [WisataController::class,'updatewisata']);
-Route::get('/deletewisata/{id}', [WisataController::class,'deletewisata']);
+Route::post('/deletewisata/{id}', [WisataController::class,'deletewisata']);
 
 //customer
 Route::get('/admin-customer', [CustomerController::class,'index'])->name('customer')->middleware('auth');
@@ -58,7 +58,7 @@ Route::get('/showcustomer/{id}', [CustomerController::class,'showcustomer'])->mi
 Route::get('/editcustomer',[CustomerController::class,'editcustomer'])->middleware('auth');
 
 Route::post('/updatecustomer/{id}', [CustomerController::class,'updatecustomer']);
-Route::get('/deletecustomer/{id}', [CustomerController::class,'deletecustomer']);
+Route::post('/deletecustomer/{id}', [CustomerController::class,'deletecustomer']);
 
 // Route::post('/signup', [SignupController::class, 'store']);
 // Route::post('/login', [LoginController::class, 'authenticate']);
@@ -70,6 +70,8 @@ Route::get('/editAdmin', [AdminController::class,'editinfo'])->middleware('auth'
 
 Route::post('/updateAdmin', [AdminController::class,'updateinfo']);
 Route::delete('/deleteAdmin', [AdminController::class,'deleteinfo']);
+
+//transaksi
 
 // Route::get('/admin-datatransaksi', function () {
 //     return view('datatransaksi');

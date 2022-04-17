@@ -30,7 +30,7 @@ class SignupController extends Controller
 
         // $validatedDate['password'] = bcrypt($validatedDate['password']);
         $validatedDate['password'] = Hash::make($validatedDate['password']);
-        
+
         User::create($validatedDate);
 
         $request->session()->flash('success', 'Signup successful!, Please Login!!! ');

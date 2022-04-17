@@ -43,17 +43,13 @@
                     <label for="floatingInput">Kode Admin</label>
                   </div>
                   <div class="form-floating mb-3">
-                  <label for="exampleInputEmail1"
-                                    class="form-label">Status</label>
-                                <select class="form-select" name="status"
-                                    aria-label="Default select example">
-                                    <option selected>
-                                    </option>
-                                    <option value="Single">Single</option>
-                                    <option value="Menikah">Menikah</option>
-                                </select>
+                    <select class="form-select" id="floatingSelectGrid" name="status" aria-label="Floating label select example">
+                      <option selected></option>
+                      <option value="Single">Single</option>
+                      <option value="Menikah">Menikah</option>
+                    </select>
+                    <label for="floatingSelectGrid">Status</label>
                   </div>
-                  
 
                   <div class="d-grid">
                     <button class="btn btn-info btn-login text-uppercase fw-bold" type="submit">Register</button>
