@@ -22,6 +22,7 @@ class WisataSeeder extends Seeder
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
             'rating' => '5',
+            'harga' => '15000',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ],
@@ -32,6 +33,7 @@ class WisataSeeder extends Seeder
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
             'rating' => '5',
+            'harga' => '15000',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ],
@@ -42,6 +44,7 @@ class WisataSeeder extends Seeder
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
             'rating' => '5',
+            'harga' => '15000',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ],
@@ -52,6 +55,7 @@ class WisataSeeder extends Seeder
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
             'rating' => '5',
+            'harga' => '15000',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ],
@@ -62,6 +66,7 @@ class WisataSeeder extends Seeder
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
             'rating' => '5',
+            'harga' => '15000',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ],
@@ -72,6 +77,7 @@ class WisataSeeder extends Seeder
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
             'rating' => '5',
+            'harga' => '15000',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ],
@@ -82,6 +88,7 @@ class WisataSeeder extends Seeder
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
             'rating' => '5',
+            'harga' => '15000',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ],
@@ -92,6 +99,7 @@ class WisataSeeder extends Seeder
             'lokasi' => 'Denpasar, Bali',
             'deskripsi' => 'It is a long established fact that a reader will be distracted by the readable content of a page.',
             'rating' => '5',
+            'harga' => '15000',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ],

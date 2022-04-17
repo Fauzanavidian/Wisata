@@ -29,6 +29,7 @@
                         <th scope="col">Foto</th>
                         <th scope="col">Deskripsi</th>
                         <th scope="col">Lokasi</th>
+                        <th scope="col">Harga</th>
                         <th scope="col">Rating</th>
                         <th scope="col">Last Updated</th>
                         <th scope="col">Aksi</th>
@@ -48,6 +49,7 @@
                         </td>
                         <td>{{ $row->deskripsi }}</td>
                         <td>{{ $row->lokasi }}</td>
+                        <td>{{ $row->harga }}</td>
                         <td>{{ $row->rating }}</td>
                         {{-- <td>{{ $row->updated_at->format('D M Y') }}</td> --}}
                         <td>{{ $row->updated_at->diffForHumans() }}</td>

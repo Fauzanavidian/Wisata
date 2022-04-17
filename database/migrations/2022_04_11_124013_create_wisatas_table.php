@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('foto');
             $table->string('lokasi');
             $table->text('deskripsi');
+            $table->integer('harga');
             $table->enum('rating',[1,2,3,4,5]);
             $table->timestamps();
         });

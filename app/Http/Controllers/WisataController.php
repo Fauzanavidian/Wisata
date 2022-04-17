@@ -29,6 +29,7 @@ class WisataController extends Controller
             'nama' => 'required',
             'lokasi' => 'required',
             'deskripsi' => 'required',
+            'harga' => 'required',
             'rating' => 'required',
             'foto' => 'required',
         ]);
@@ -57,13 +58,14 @@ class WisataController extends Controller
     }
 
     public function updatewisata(Request $request, $id){
+        // dd($request->all());
 
-        $request->validate([
-            'nama' => 'required',
-            'lokasi' => 'required',
-            'deskripsi' => 'required',
-            'rating' => 'required',
-        ]);
+        // $request->validate([
+        //     'nama' => 'required',
+        //     'lokasi' => 'required',
+        //     'deskripsi' => 'required',
+        //     'rating' => 'required',
+        // ]);
 
         $data = Wisata::find($id);
         if($request->hasFile('foto')){
