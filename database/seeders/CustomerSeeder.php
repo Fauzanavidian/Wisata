@@ -16,7 +16,7 @@ class CustomerSeeder extends Seeder
      */
     public function run()
     {
-        //
+
         DB::table('customers')->insert([
             'full_name' => 'kamil',
             'email' =>'gggaming@gmail.com',
@@ -56,6 +56,22 @@ class CustomerSeeder extends Seeder
         DB::table('customers')->insert([
             'full_name' => 'kamil5',
             'email' =>'gggaming5@gmail.com',
+            'phone' => '123123123',
+            'password' => 'testing',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+        ]);
+        DB::table('customers')->insert([
+            'full_name' => 'kamil',
+            'email' =>'gggaming6@gmail.com',
+            'phone' => '123123123',
+            'password' => 'testing',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+        ]);
+        DB::table('customers')->insert([
+            'full_name' => 'kamil',
+            'email' =>'gggaming7@gmail.com',
             'phone' => '123123123',
             'password' => 'testing',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
