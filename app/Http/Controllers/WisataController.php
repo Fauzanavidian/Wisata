@@ -67,7 +67,7 @@ class WisataController extends Controller
             'harga' => 'required|integer',
             'rating' => 'required',
         ]);
-
+        // dd($request->all());
         $data = Wisata::find($id);
         if($request->hasFile('foto')){
             $request->file('foto')->move('fotowisata/',$request->file('foto')->getClientOriginalName());

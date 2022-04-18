@@ -43,7 +43,7 @@
                         <td>{{ $row->full_name }}</td>
                         <td>{{ $row->email }}</td>
                         <td>{{ $row->phone }}</td>
-                        <td>{{ $row->password }}</td>
+                        <td></td>
                         {{-- <td>{{ $row->updated_at->format('D M Y') }}</td> --}}
                         <td>{{ $row->updated_at->diffForHumans() }}</td>
                         <td>
