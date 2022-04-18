@@ -20,7 +20,7 @@ class SignupController extends Controller
     $validatedDate = $request->validate([
        'name' => 'required|max:225',
        'email' => 'required|email',
-       'password' => 'required|min:5|max:225',
+       'password' => 'required|min:5|max:25',
        'phone' => 'required',
        'usia' => 'required',
        'motto' => 'required',
@@ -29,10 +29,9 @@ class SignupController extends Controller
        'foto' => 'required',
         ]);
 
-        // $validatedDate['password'] = bcrypt($validatedDate['password']);
+       
         $validatedDate['password'] = Hash::make($validatedDate['password']);
 
-        // User::create($validatedDate);
         $data =  User::create($validatedDate);
         if($request->hasFile('foto')){
             $request->file('foto')->move('fotoadmin/',$request->file('foto')->getClientOriginalName());

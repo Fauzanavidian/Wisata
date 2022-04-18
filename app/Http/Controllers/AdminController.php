@@ -15,25 +15,14 @@ class AdminController extends Controller
 
     public function updateinfo(Request $request){
 
-    
-        // $aja2=[
-        //     'name' => 'required|max:225',
-        //     'email' => 'required|email',
-        //     'phone' => 'required',
-        //     'usia' => 'required',
-        //     'motto' => 'required',
-        //     'status' => 'required',
-        //     'kode' => 'required',
-        //      ];
-            //  \Log::info($request);
-            //  $validatedDate =$request->validate($aja2);
-        // User::save($validatedDate);
-        // User::update($validatedDate);
-        // \Log::info(Auth::id());
-        // $request->user()->update(
-        //     $request->all()
-        
-        // );
+        $request->validate([
+            'email' => 'required|email',
+            'phone' => 'required',
+            'usia' => 'required',
+            'motto' => 'required',
+            'status' => 'required',
+            'JK' => 'required',
+        ]);
         $data = User::find(auth()->user()->id);
         if($request->hasFile('foto')){
             $request->file('foto')->move('fotoadmin/',$request->file('foto')->getClientOriginalName());

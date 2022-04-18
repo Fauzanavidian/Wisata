@@ -4,9 +4,6 @@
 
 <section>
 <div class="text-center">
-        <!-- <label for="exampleInputEmail1"
-                    class="form-label">Email </label>
-            <br> -->
             <img class="rounded-circle" src="{{ asset('fotoadmin/'. Auth()->User()->foto) }}"
                                 alt="" style="width: 8em;">
 </div>
@@ -15,7 +12,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-6">
-              <!-- alert -->
+              <!-- alert berhasil edit -->
             @if(session()->has('berhasil'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('berhasil') }}
@@ -27,12 +24,6 @@
                         <form action="">
                             @csrf
                             <div class="mb-3">
-                                <!-- <label for="exampleInputEmail1"
-                                    class="form-label">Email </label>
-                                <br> -->
-                                <!-- <label>{{ Auth()->User()->foto }}</label> -->
-                            </div>
-                            <div class="mb-3">
                                 <label for="exampleInputEmail1"
                                     class="form-label">Email </label>
                                 <br>
@@ -42,7 +33,7 @@
                                 <label for="exampleInputEmail1"
                                     class="form-label">Phone</label>
                                 <br>
-                                <label>0{{ Auth()->User()->phone }}</label>
+                                <label>{{ Auth()->User()->phone }}</label>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1"
@@ -56,12 +47,6 @@
                                     <br>
                                 <label>{{ Auth()->User()->usia }}</label>
                             </div>
-                            <!-- <div class="mb-3">
-                                <label for="exampleInputEmail1"
-                                    class="form-label">Kode Admin</label>
-                                <br>
-                                <label>{{ Auth()->User()->kode }}</label>
-                            </div> -->
                             <div class="mb-3">
                                 <label for="exampleInputEmail1"
                                     class="form-label">Status</label>

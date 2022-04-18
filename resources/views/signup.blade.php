@@ -38,10 +38,6 @@
                     <input type="motto" name="motto" class="form-control" id="motto" >
                     <label for="floatingInput">Motto Hidup</label>
                   </div>
-                  <!-- <div class="form-floating mb-3">
-                    <input type="kode" name="kode" class="form-control" id="kode" >
-                    <label for="floatingInput">Kode Admin</label>
-                  </div> -->
                   <div class="form-floating mb-3">
                     <select class="form-select" id="floatingSelectGrid" name="status" aria-label="Floating label select example">
                       <option selected></option>

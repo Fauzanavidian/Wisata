@@ -40,13 +40,6 @@
                                     
                                     aria-describedby="emailHelp" value="{{ Auth()->User()->usia  }}">
                             </div>
-                            <!-- <div class="mb-3">
-                                <label for="exampleInputEmail1"
-                                    class="form-label">kode Admin</label>
-                                <input type="text" name="kode" class="form-control"
-                                    
-                                     value="{{ Auth()->User()->kode  }}">
-                            </div> -->
                             <div class="mb-3">
                                 <label for="exampleInputEmail1"
                                     class="form-label">Status</label>

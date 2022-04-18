@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
           <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-              <!-- alert -->
+  <!-- alert -->
             @if(session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
