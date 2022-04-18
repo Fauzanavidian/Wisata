@@ -58,12 +58,14 @@
                     </select>
                     <label for="floatingSelectGrid">Jenis Kelamin</label>
                   </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Masukan Foto</label>
+                            <input class="form-control" type="file" name="foto" id="foto">
+                          </div>
                   </div>
-                      <div class="mb-3">
-                            <label for="exampleInputEmail1"
-                                  class="form-label">Masukan Foto</label>
-                              <input type="file" name="foto" class="form-control">
-                        </div>
+
+
+
 
                   <div class="d-grid">
                     <button class="btn btn-info btn-login text-uppercase fw-bold" type="submit">Register</button>

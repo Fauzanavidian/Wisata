@@ -7,9 +7,10 @@
         <!-- <label for="exampleInputEmail1"
                     class="form-label">Email </label>
             <br> -->
-            <img src="{{ asset('fotoadmin/'. Auth()->User()->foto) }}"
+            <img class="rounded-circle" src="{{ asset('fotoadmin/'. Auth()->User()->foto) }}"
                                 alt="" style="width: 8em;">
 </div>
+<br>
 <h1 class="text-center">{{Auth()->User()->name}}</h1>
     <div class="container">
         <div class="row justify-content-center">

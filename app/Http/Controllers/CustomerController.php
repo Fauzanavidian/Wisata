@@ -32,6 +32,7 @@ class CustomerController extends Controller
             'password' => 'required',
         ]);
 
+
         //notifikasi/alert belum muncul
 
         $data = Customer::create($request->all());
