@@ -26,12 +26,12 @@ class WisataController extends Controller
     public function insertwisata(Request $request){
         // dd($request->all());
         $request->validate([
-            'nama' => 'required|string|max:225',
-            'lokasi' => 'required|string|max:225',
-            'deskripsi' => 'required|string|max:225',
+            'nama' => 'required|string|max:255',
+            'lokasi' => 'required|string',
+            'deskripsi' => 'required|string',
             'harga' => 'required|integer',
-            'rating' => 'required|integer',
-            'foto' => 'required|string',
+            'rating' => 'required',
+            'foto' => 'required',
         ]);
 
         //notifikasi/alert belum muncul
@@ -61,12 +61,11 @@ class WisataController extends Controller
         // dd($request->all());
 
         $request->validate([
-            'nama' => 'required|string|max:225',
-            'lokasi' => 'required|string|max:225',
-            'deskripsi' => 'required|string|max:225',
+            'nama' => 'required|string|max:255',
+            'lokasi' => 'required|string',
+            'deskripsi' => 'required|string',
             'harga' => 'required|integer',
-            'rating' => 'required|integer',
-            'foto' => 'required|string',
+            'rating' => 'required',
         ]);
 
         $data = Wisata::find($id);
