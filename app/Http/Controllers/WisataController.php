@@ -26,10 +26,10 @@ class WisataController extends Controller
     public function insertwisata(Request $request){
         // dd($request->all());
         $request->validate([
-            'nama' => 'required',
-            'lokasi' => 'required',
-            'deskripsi' => 'required',
-            'harga' => 'required',
+            'nama' => 'required|string|max:255',
+            'lokasi' => 'required|string',
+            'deskripsi' => 'required|string',
+            'harga' => 'required|integer',
             'rating' => 'required',
             'foto' => 'required',
         ]);
@@ -60,18 +60,20 @@ class WisataController extends Controller
     public function updatewisata(Request $request, $id){
         // dd($request->all());
 
-        // $request->validate([
-        //     'nama' => 'required',
-        //     'lokasi' => 'required',
-        //     'deskripsi' => 'required',
-        //     'rating' => 'required',
-        // ]);
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'lokasi' => 'required|string',
+            'deskripsi' => 'required|string',
+            'harga' => 'required|integer',
+            'rating' => 'required',
+        ]);
 
         $data = Wisata::find($id);
         if($request->hasFile('foto')){
             $request->file('foto')->move('fotowisata/',$request->file('foto')->getClientOriginalName());
             $data-> foto = 'fotowisata/'. $request->file('foto')->getClientOriginalName();
         }
+        // dd($request->all());
         $data->update($request->all());
         return redirect()->route('wisata')->with('success',' Data Berhasil Di Update ke List Wisata');
     }
