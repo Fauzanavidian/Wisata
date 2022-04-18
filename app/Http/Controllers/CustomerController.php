@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
@@ -31,7 +32,7 @@ class CustomerController extends Controller
             'phone' => 'required',
             'password' => 'required',
         ]);
-
+        $request['password'] = Hash::make($request['password']);
         //notifikasi/alert belum muncul
 
         $data = Customer::create($request->all());
@@ -39,6 +40,7 @@ class CustomerController extends Controller
     }
 
     public function editcustomer(){
+        $request['password'] = Hash::make($request['password']);
         $data = Session::get('datacustomer');
         return view('editcustomer',compact('data'));
     }
