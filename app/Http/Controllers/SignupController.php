@@ -39,9 +39,7 @@ class SignupController extends Controller
             $data->save();
         }
 
-        $request->session()->flash('success', 'Signup successful!, Please Login!!! ');
-
-        return redirect('/login');
+        return redirect('/login')->with('success', 'Signup successful!, Please Login!!! ');
 
     }
 }

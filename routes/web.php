@@ -66,7 +66,7 @@ Route::get('/dataAdmin', function () {
     return view('dataAdmin');
 })->middleware('auth');
 
-Route::get('/editAdmin', [AdminController::class,'editinfo'])->middleware('auth');
+Route::get('/editAdmin', [AdminController::class,'editinfo'])->middleware('auth')->middleware('auth');
 
 Route::post('/updateAdmin', [AdminController::class,'updateinfo']);
 Route::delete('/deleteAdmin', [AdminController::class,'deleteinfo']);

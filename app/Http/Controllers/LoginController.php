@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    public function login()
-    {
-        return view('login',['title' => 'login']);
-    }
+    // public function login()
+    // {
+    //     return view('login',['title' => 'login']);
+    // }
 
     public function authenticate(Request $request)
     {

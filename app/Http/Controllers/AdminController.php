@@ -36,7 +36,7 @@ class AdminController extends Controller
     }
     public function deleteinfo(){
         User::destroy(auth()->user()->id);
-        return redirect('/login')->with('delete_s','Delete Account Succes!!!');;
+        return redirect('/login')->with('delete_s','Delete Account Succes!!!');
 
     }
 
