@@ -40,7 +40,6 @@ class CustomerController extends Controller
     }
 
     public function editcustomer(){
-        $request['password'] = Hash::make($request['password']);
         $data = Session::get('datacustomer');
         return view('editcustomer',compact('data'));
     }
@@ -60,6 +59,8 @@ class CustomerController extends Controller
             'phone' => 'required',
             'password' => 'required',
         ]);
+
+        $request['password'] = Hash::make($request['password']);
 
         $data = Customer::find($id);
         $data->update($request->all());
