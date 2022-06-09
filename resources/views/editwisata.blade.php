@@ -9,7 +9,8 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-body">
-                        <form action="/updatewisata/{{ $data->id }}" method="POST" enctype="multipart/form-data">
+                        <form action="/updatewisata/{{ $data->id }}" method="post" enctype="multipart/form-data">
+                            @method('put')
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputEmail1"
