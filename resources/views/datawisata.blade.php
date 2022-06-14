@@ -54,8 +54,13 @@
                         {{-- <td>{{ $row->updated_at->format('D M Y') }}</td> --}}
                         <td>{{ $row->updated_at->diffForHumans() }}</td>
                         <td>
-                            <a href="/deletewisata/{{ $row->id }}"
-                                class="btn btn-danger mb-1 delete">Delete</a>
+                        <form action="/deletewisata/{{ $row->id }}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button class="btn btn-danger mb-1 delete">Delete</button>   
+                            </form>
+                            <!-- <a href="/deletewisata/{{ $row->id }}"
+                                class="btn btn-danger mb-1 delete">Delete</a> -->
                                 {{-- isi class kalau mau ada sweetalert : data-nama="{{ $row->nama }}" data-id={{  $row->id }} --}}
                             <a href="/showwisata/{{$row->id }}"
                                 class="btn btn-primary">Edit</a>

@@ -66,7 +66,7 @@
                         <form action="/deleteAdmin" method="post">
                             @method('delete')
                             @csrf
-                            <button class="btn btn-danger border-0" onclick="return confirm('Yakin mau hapus akun?')">Delete</buttom>
+                            <button class="btn btn-danger border-0" onclick="return confirm('Yakin mau hapus akun?')">Delete</button>
                         </form>
                     </div>
                 </div>
