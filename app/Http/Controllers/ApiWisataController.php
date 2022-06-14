@@ -35,11 +35,19 @@ class ApiWisataController extends Controller
     //update
     public function updatewisata(Request $request, $id){
         $request->validate([
+<<<<<<< Updated upstream
         'nama' => 'required|string|max:255',
         'lokasi' => 'required|string',
         'deskripsi' => 'required|string',
         'harga' => 'required|integer',
         'rating' => 'required',
+=======
+        'nama' => '',
+        'lokasi' => '',
+        'deskripsi' => '',
+        'harga' => '',
+        'rating' => '',
+>>>>>>> Stashed changes
         ]);
 
         $data = Wisata::find($id);

@@ -54,10 +54,10 @@ class CustomerController extends Controller
     public function updatecustomer(Request $request, $id){
 
         $request->validate([
-            'full_name' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'password' => 'required',
+            'full_name' => '',
+            'email' => '',
+            'phone' => '',
+            'password' => '',
         ]);
 
         $request['password'] = Hash::make($request['password']);
