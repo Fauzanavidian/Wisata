@@ -5,7 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\ApiCustomerController;
 use App\Http\Controllers\ApiWisataController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\ApiTransaksiController;
+=======
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -29,11 +32,18 @@ use App\Http\Controllers\ApiTransaksiController;
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+<<<<<<< Updated upstream
 
 Route::post('/signup', [ApiController::class, 'store']);
 
 //wisata
 
+=======
+Route::post('/signup', [ApiController::class, 'store']);
+
+//wisata
+Route::get('/admin-wisata', [ApiWisataController::class,'index'])->name('wisata');
+>>>>>>> Stashed changes
 
 
 Route::post('/insertwisata', [ApiWisataController::class,'insertwisata']);

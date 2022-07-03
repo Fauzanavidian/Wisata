@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< Updated upstream
 use App\Models\User;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+=======
+use App\Models\Customer;
+use Illuminate\Support\Facades\Hash;
+>>>>>>> Stashed changes
 
 class ApiCustomerController extends Controller
 {
@@ -57,6 +62,7 @@ class ApiCustomerController extends Controller
     $data->delete();
     return response()->json(['message' => 'Success delete','data'=>null]);
     }
+<<<<<<< Updated upstream
 
     public function auth(Request $request){
         if (!Auth::guard('customer')->attempt($request->only('email', 'password'))) {
@@ -115,4 +121,6 @@ class ApiCustomerController extends Controller
         }
         
     }
+=======
+>>>>>>> Stashed changes
 }

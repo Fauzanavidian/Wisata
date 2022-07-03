@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Hash;
+<<<<<<< Updated upstream
 use Illuminate\Support\Facades\Auth;
+=======
+>>>>>>> Stashed changes
 
 class ApiController extends Controller
 {
@@ -44,6 +47,7 @@ class ApiController extends Controller
     //     #notifikasi delete berhasil
     //     return response()->json(['message' => 'Success','data'=>null]);
     //     }
+<<<<<<< Updated upstream
     public function auth(Request $request){
         if (!Auth::attempt($request->only('email', 'password'))) {
             return response()->json([
@@ -66,4 +70,6 @@ class ApiController extends Controller
             ]
         ], 200);
         }
+=======
+>>>>>>> Stashed changes
 }

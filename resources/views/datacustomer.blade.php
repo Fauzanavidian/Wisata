@@ -48,9 +48,17 @@
                         <td>{{ $row->updated_at->diffForHumans() }}</td>
                         <td>
                             <form action="/deletecustomer/{{ $row->id }}" method="post">
+<<<<<<< Updated upstream
                             @method('delete')
                             @csrf
                             <button class="btn btn-danger mb-1 delete">Delete</button>
+=======
+                            <!-- <a href="/deletecustomer/{{ $row->id }}"
+                                class="btn btn-danger mb-1 delete">Delete</a> -->
+                            @method('delete')
+                            @csrf
+                            <button class="btn btn-danger mb-1 delete">Delete</button>   
+>>>>>>> Stashed changes
                             </form>
                             <a href="/showcustomer/{{$row->id }}"
                                 class="btn btn-primary">Edit</a>

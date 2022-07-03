@@ -49,6 +49,10 @@ Route::get('/admin-tambahwisata', [WisataController::class,'tambahwisata'])->mid
 Route::post('/insertwisata', [WisataController::class,'insertwisata']);
 Route::get('/showwisata/{id}', [WisataController::class,'showwisata'])->middleware('auth');
 Route::get('/editwisata',[WisataController::class,'editwisata'])->middleware('auth');
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 Route::put('/updatewisata/{id}', [WisataController::class,'updatewisata']);
 Route::delete('/deletewisata/{id}', [WisataController::class,'deletewisata']);
 
@@ -61,6 +65,7 @@ Route::get('/editcustomer',[CustomerController::class,'editcustomer'])->middlewa
 Route::put('/updatecustomer/{id}', [CustomerController::class,'updatecustomer']);
 Route::delete('/deletecustomer/{id}', [CustomerController::class,'deletecustomer']);
 
+<<<<<<< Updated upstream
 //transaksi
 Route::get('/admin-datatransaksi', [TransactionController::class,'index'])->name('Transaction')->middleware('auth');
 Route::post('/insertTransaction', [TransactionController::class,'inserttransaction']);
@@ -68,6 +73,10 @@ Route::get('/showTransaction/{id}', [TransactionController::class,'showtransacti
 Route::get('/edittransaction',[TransactionController::class,'edittransaction'])->middleware('auth');
 Route::post('/updatetransaction/{id}', [TransactionController::class,'updatetransaction']);
 Route::delete('/deletetransaction/{id}', [TransactionController::class,'deletetransaction']);
+=======
+Route::put('/updatecustomer/{id}', [CustomerController::class,'updatecustomer']);
+Route::delete('/deletecustomer/{id}', [CustomerController::class,'deletecustomer']);
+>>>>>>> Stashed changes
 
 // Route::post('/signup', [SignupController::class, 'store']);
 // Route::post('/login', [LoginController::class, 'authenticate']);

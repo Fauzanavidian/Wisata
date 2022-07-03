@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< Updated upstream
 use App\Models\Wisata;
 use App\Models\Transaksi;
 use App\Models\User;
@@ -116,4 +117,10 @@ class ApiTransaksiController extends Controller
             ], 422);
         }
     }
+=======
+
+class ApiTransaksiController extends Controller
+{
+    //
+>>>>>>> Stashed changes
 }
