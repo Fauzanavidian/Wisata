@@ -60,8 +60,11 @@ Route::delete('/deletecustomer/{id}', [ApiCustomerController::class,'deletecusto
 //admin
 Route::post('/updateAdmin', [AdminController::class,'updateinfo']);
 Route::delete('/deleteAdmin', [AdminController::class,'deleteinfo']);
+<<<<<<< Updated upstream
 Route::get('/admin-datatransaksi', [TransactionController::class,'index'])->middleware('auth');
 
+=======
+>>>>>>> Stashed changes
 
 //transaksi
 
@@ -69,6 +72,7 @@ Route::get('/admin-datatransaksi', [TransactionController::class,'index'])->midd
 //     return view('datatransaksi');
 // });
 
+<<<<<<< Updated upstream
 
 
 Route::put('/updatetransaksi/{id}', [ApiTransaksiController::class,'updatecustomer']);
@@ -84,3 +88,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 Route::post('/admin_login', [ApiController::class,'auth']);
 Route::get('/admin-wisata', [ApiWisataController::class,'index'])->name('wisata');
 Route::post('/customer_login', [ApiCustomerController::class,'auth']);
+=======
+Route::get('/admin-datatransaksi', [TransactionController::class,'index'])->middleware('auth');
+>>>>>>> Stashed changes
