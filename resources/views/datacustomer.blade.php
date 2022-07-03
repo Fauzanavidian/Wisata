@@ -42,17 +42,15 @@
                         <th scope="row">{{ $index + $data->firstItem() }}</th>
                         <td>{{ $row->full_name }}</td>
                         <td>{{ $row->email }}</td>
-                        <td>{{ $row->phone }}</td>
+                        <td>0{{ $row->phone }}</td>
                         <td></td>
                         {{-- <td>{{ $row->updated_at->format('D M Y') }}</td> --}}
                         <td>{{ $row->updated_at->diffForHumans() }}</td>
                         <td>
                             <form action="/deletecustomer/{{ $row->id }}" method="post">
-                            <!-- <a href="/deletecustomer/{{ $row->id }}"
-                                class="btn btn-danger mb-1 delete">Delete</a> -->
                             @method('delete')
                             @csrf
-                            <button class="btn btn-danger mb-1 delete">Delete</button>   
+                            <button class="btn btn-danger mb-1 delete">Delete</button>
                             </form>
                             <a href="/showcustomer/{{$row->id }}"
                                 class="btn btn-primary">Edit</a>

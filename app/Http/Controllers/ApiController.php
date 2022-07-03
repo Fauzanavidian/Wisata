@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class ApiController extends Controller
 {
@@ -43,4 +44,26 @@ class ApiController extends Controller
     //     #notifikasi delete berhasil
     //     return response()->json(['message' => 'Success','data'=>null]);
     //     }
+    public function auth(Request $request){
+        if (!Auth::attempt($request->only('email', 'password'))) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Wrong email/password'
+            ], 401);
+            return back()->with('loginError','Login failed!!!');
+        }
+    
+        $user = User::where('email', $request->email)->firstOrFail();
+        $token = $user->createToken('auth_token')->plainTextToken;
+    
+        return response()->json([
+            'success' => true,
+            'message' => 'Login success!',
+            'data' => [
+                'id' => $user->id,
+                'nama' => $user->nama,
+                'token' => $token,
+            ]
+        ], 200);
+        }
 }

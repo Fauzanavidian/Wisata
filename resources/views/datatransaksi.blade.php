@@ -30,12 +30,11 @@
                         <th scope="col">Payment Date</th>
                         <th scope="col">Payment Status</th>
                         <th scope="col">Total Prices</th>
-                        <th scope="col">Bukti Transfer</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- <tr>
+                    <!-- {{-- <tr>
                         <td>1</td>
                         <td>TRA-1</td>
                         <td>ganteng@aku.com</td>
@@ -49,7 +48,7 @@
                             <a href="#"
                                 class="btn btn-primary">Edit</a>
                         </td>
-                    </tr> --}}
+                    </tr> --}} -->
 
                     @php
                     $no = 1;
@@ -67,7 +66,12 @@
                         <td>{{ $row->foto }}</td>
                         <td></td>
                         <td>
-                            <a href="#"
+                            <form action="/deletetransaction/{{ $row->id }}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button class="btn btn-danger mb-1 delete">Delete</button>
+                            </form>
+                            <a href="/showtransaction/{{$row->id }}"
                                 class="btn btn-primary">Edit</a>
                         </td>
                     </tr>

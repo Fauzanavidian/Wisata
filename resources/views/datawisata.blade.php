@@ -44,7 +44,9 @@
                         <th scope="row">{{ $index + $data->firstItem() }}</th>
                         <td>{{ $row->nama }}</td>
                         <td>
-                            <img src="{{ asset('fotowisata/'. $row->foto) }}"
+                            <!-- <img src="{{ asset('fotowisata/'. $row->foto) }}"
+                                alt="" style="width: 8em;"> -->
+                                <img src="{{  $row->foto }}"
                                 alt="" style="width: 8em;">
                         </td>
                         <td>{{ $row->deskripsi }}</td>

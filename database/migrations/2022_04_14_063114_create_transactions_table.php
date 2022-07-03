@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('id_user');
+            $table->integer('id_wisata');
             $table->string('email_customer');
             $table->string('nama_wisata');
             $table->timestamps();
             $table->string('payment_date');
             $table->string('payment_status')->default('Unpaid');
             $table->BigInteger('total_price');
-            $table->string('foto');
-            
         });
 
         Schema::table('transactions', function (Blueprint $table) {

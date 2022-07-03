@@ -23,11 +23,11 @@ class ApiWisataController extends Controller
     public function insertwisata(Request $request){
 
     $data = Wisata::create($request->all());
-    if($request->hasFile('foto')){
-        $request->file('foto')->move('fotowisata/',$request->file('foto')->getClientOriginalName());
-        $data-> foto = $request->file('foto')->getClientOriginalName();
-        $data->save();
-    }
+    // if($request->hasFile('foto')){
+    //     $request->file('foto')->move('fotowisata/',$request->file('foto')->getClientOriginalName());
+    //     $data-> foto = $request->file('foto')->getClientOriginalName();
+    //     $data->save();
+    // }
     return response()->json(['message' => 'Success','data'=>$data]);
 
     }

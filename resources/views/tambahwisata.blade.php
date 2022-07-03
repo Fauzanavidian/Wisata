@@ -56,7 +56,8 @@
                             <div class="mb-3">
                                 <label for="exampleInputEmail1"
                                     class="form-label">Masukan Foto</label>
-                                <input type="file" name="foto" class="form-control">
+                                <!-- <input type="file" name="foto" class="form-control"> -->
+                                <input type="text" name = "foto" class="form-control">
                             </div>
                             <button type="submit"
                                 class="btn btn-primary">Submit</button>

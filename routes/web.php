@@ -22,6 +22,14 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/destination', function () {
+    return view('listwisata');
+});
+
+Route::get('/detailwisata', function () {
+    return view('detailwisata');
+});
+
 // auth
 Route::get('/login', function () {
     return view('login');
@@ -38,27 +46,28 @@ Route::post('/signup', [SignupController::class, 'store']);
 //wisata
 Route::get('/admin-wisata', [WisataController::class,'index'])->name('wisata')->middleware('auth');
 Route::get('/admin-tambahwisata', [WisataController::class,'tambahwisata'])->middleware('auth');
-
 Route::post('/insertwisata', [WisataController::class,'insertwisata']);
-
 Route::get('/showwisata/{id}', [WisataController::class,'showwisata'])->middleware('auth');
 Route::get('/editwisata',[WisataController::class,'editwisata'])->middleware('auth');
-
 Route::put('/updatewisata/{id}', [WisataController::class,'updatewisata']);
 Route::delete('/deletewisata/{id}', [WisataController::class,'deletewisata']);
 
 //customer
 Route::get('/admin-customer', [CustomerController::class,'index'])->name('customer')->middleware('auth');
-
 Route::get('/admin-tambahcustomer', [CustomerController::class,'tambahcustomer'])->middleware('auth');
-
 Route::post('/insertcustomer', [CustomerController::class,'insertcustomer']);
-
 Route::get('/showcustomer/{id}', [CustomerController::class,'showcustomer'])->middleware('auth');
 Route::get('/editcustomer',[CustomerController::class,'editcustomer'])->middleware('auth');
-
 Route::put('/updatecustomer/{id}', [CustomerController::class,'updatecustomer']);
 Route::delete('/deletecustomer/{id}', [CustomerController::class,'deletecustomer']);
+
+//transaksi
+Route::get('/admin-datatransaksi', [TransactionController::class,'index'])->name('Transaction')->middleware('auth');
+Route::post('/insertTransaction', [TransactionController::class,'inserttransaction']);
+Route::get('/showTransaction/{id}', [TransactionController::class,'showtransaction'])->middleware('auth');
+Route::get('/edittransaction',[TransactionController::class,'edittransaction'])->middleware('auth');
+Route::post('/updatetransaction/{id}', [TransactionController::class,'updatetransaction']);
+Route::delete('/deletetransaction/{id}', [TransactionController::class,'deletetransaction']);
 
 // Route::post('/signup', [SignupController::class, 'store']);
 // Route::post('/login', [LoginController::class, 'authenticate']);
@@ -67,14 +76,7 @@ Route::get('/dataAdmin', function () {
 })->middleware('auth');
 
 Route::get('/editAdmin', [AdminController::class,'editinfo'])->middleware('auth')->middleware('auth');
-
 Route::post('/updateAdmin', [AdminController::class,'updateinfo']);
 Route::delete('/deleteAdmin', [AdminController::class,'deleteinfo']);
 
-//transaksi
 
-// Route::get('/admin-datatransaksi', function () {
-//     return view('datatransaksi');
-// });
-
-Route::get('/admin-datatransaksi', [TransactionController::class,'index'])->middleware('auth');

@@ -20,30 +20,37 @@ class TransactionController extends Controller
         return view('datatransaksi',compact('data'));
     }
 
-    // public function insertTransaction(Request $request){
-    //     $request->validate([
-    //         'Username'=>'required',
-    //         'Total_Prices'=>'required',
-    //     ]);
+    public function inserttransaction(Request $request){
+        $request->validate([
+            'Username'=>'required',
+            'Total_Prices'=>'required',
+        ]);
 
-    //     $data = Transaksi::create($request->all());
-    //     return redirect()->route('Transaction')->with('Success','Data berhasil ditambahkan ke dalam data transaksi');
-    // }
+        $data = Transaksi::create($request->all());
+        return redirect()->route('Transaction')->with('Success','Data berhasil ditambahkan ke dalam data transaksi');
+    }
 
-    // public function showTransaction($id){
-    //     $data = Transaksi::find($id);
-    //     return view('datatransaksi',compact('data'));
-    // }
+    public function edittransaction(){
+        $data = Session::get('datatransaksi');
+        return view('edittransaksi',compact('data'));
+    }
 
-    // public function updateTransaction(Request $request, $id){
-    //     $data = Transaksi::find($id);
-    //     $data->update($request->all());
-    //     return redirect()->route('Transaction')->with('Success','Data berhasil diperbaharui');
-    // }
+    public function showtransaction($id){
+        $data = Transaksi::find($id);
+        Session::put('datatransaksi',$data);
+        return redirect()->action([TransactionController::class, 'edittransaction']);
+    }
 
-    // public function deleteTransaction($id){
-    //     $data = Transaksi::find($id);
-    //     $data->delete();
-    //     return redirect()->route('Transaction')->with('Success','Data berhasil dihapus');
-    // }
+    public function updatetransaction(Request $request, $id){
+
+        $data = Transaksi::find($id);
+        $data->update($request->all());
+        return redirect()->route('Transaction')->with('Success','Data berhasil diperbaharui');
+    }
+
+    public function deletetransaction($id){
+        $data = Transaksi::find($id);
+        $data->delete();
+        return redirect()->route('Transaction')->with('Success','Data berhasil dihapus');
+    }
 }
